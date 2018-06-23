@@ -1,6 +1,4 @@
-'''
-Converts the specified GEXF file to nodes.csv and edges.csv files.
-'''
+# Converts the specified GEXF file to nodes.csv and edges.csv files.
 import sys
 import xml.etree.ElementTree as ET 
 
@@ -8,9 +6,7 @@ NODES_FILE = "nodes.csv"
 EDGES_FILE = "edges.csv"
 
 def findElement(graphElement,str):
-    '''
-    Finds either nodesElement or edgesElement which str specifies to.
-    '''
+    # Finds either nodesElement or edgesElement which str specifies to.
     element = None
     for child in graphElement:
         if(str in child.tag):
@@ -22,9 +18,7 @@ def findElement(graphElement,str):
     return element
 
 def writeNodes(nodesElement):
-    '''
-    Writes to the nodes.csv file which has two columns: nodeID and nodeName.
-    '''
+    # Writes to the nodes.csv file which has two columns: nodeID and nodeName.
     with open(NODES_FILE,'w') as file:
         file.write("nodeID,nodeName\n")
         for node in nodesElement:                              # node   = <node id= .. > .. </node>
@@ -34,9 +28,7 @@ def writeNodes(nodesElement):
             file.write(nodeId + "," + nodeName + "\n")    
 
 def writeEdges(edgesElement):
-    '''
-    Writes to the edges.csv file which has three columns: SourceID, TargetID and weight.
-    '''
+    # Writes to the edges.csv file which has three columns: SourceID, TargetID and weight.
     with open(EDGES_FILE,'w') as file:
         file.write("SourceID,TargetID,weight\n")
         for edge in edgesElement:                              # edge   = <edge source= .. > .. </edge>
@@ -52,9 +44,7 @@ def writeEdges(edgesElement):
             file.write(sourceId + "," + targetId + "," + weight + "\n")
 
 def convert(gexfFile):
-    '''
-    Converts GEXF to the CSV.
-    '''
+    # Converts GEXF to the CSV.
     tree = ET.parse(gexfFile)
     root = tree.getroot()
     for child in root:
