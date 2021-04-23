@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gexf xmlns="http://www.gexf.net/1.2draft" xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+    <meta lastmodifieddate="2009-03-20">
+        <creator>https://gephi.org/gexf/format/basic.html</creator>
+        <description>Example undirected gexf file</description>
+    </meta>
+    <graph mode="static" defaultedgetype="undirected">
+        <nodes>
+            <node id="0" label="node1"/>
+            <node id="1" label="node2"/>
+        </nodes>
+        <edges>
+            <edge id="0" source="0" target="1"/>
+        </edges>
+    </graph>
+</gexf>
