@@ -1,20 +1,20 @@
 # gexf-to-csv
 
-In order to convert the GEXF (Graph Exchange XML Format) files to the CSV files (nodes.csv and edges.csv)
-use the command:
+In order to convert a `GEXF` (Graph Exchange XML Format) file to the `nodes` and `edges` `CSV` files, you can use the command:
 
-```python main.py yourFileName.gexf```
-
-
-Note: _Python 3.6_ is recommended.
+`python main.py {yourFileName}.gexf`
 
 ## Output CSV Files
 
-### nodes.csv
-This CSV file has two columns: nodeID and nodeName.
-This CSV file can be used to convert the id's of the edges to the node's real names.
+### {yourFileName}\_nodes.csv
 
-### edges.csv
-This CSV file has three columns: SourceID, TargetID and weight.
-"SourceID" and "TargetID" represents the id of the source and target nodes.
-"weight" represents the weight of the edge. 
+This file has two columns: `nodeID` and `nodeName`.
+
+### {yourFileName}\_edges.csv
+
+This file has three columns: `SourceID`, `TargetID` and `weight`.
+
+`SourceID` and `TargetID` represents the id of the source and target nodes.
+`weight` represents the weight of the edge.
+
+If the graph is undirected (has attribute `defaultedgetype` as `undirected` in the `GEXF` file), the edges `CSV` file will contain two edge rows for each edge specified in the `GEXF` file.
